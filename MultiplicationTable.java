@@ -1,15 +1,23 @@
 import java.util.Scanner;
+
 public class MultiplicationTable {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter a number to print its multiplication table: ");
-        int num = sc.nextInt();
+        System.out.print("Enter a number to generate its multiplication table: ");
+        int number = scanner.nextInt();
 
-        for (int i = 1; i <= 10; i++) {
-            System.out.println(num + " x " + i + " = " + (num * i));
+        int[] table = new int[10]; 
+
+        for (int i = 0; i < table.length; i++) {
+            table[i] = number * (i + 1);
         }
 
-        sc.close();
+        System.out.println("\n--- Multiplication Table of " + number + " ---");
+        for (int i = 0; i < table.length; i++) {
+            System.out.println(number + " * " + (i + 1) + " = " + table[i]);
+        }
+
+        scanner.close();
     }
 }
